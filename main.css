@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header { /* Estilizando header */
+    background-color: #5f27cd;
+    padding: 16px 0;
+    color: #fff;
+    display: flex; /* traz o botão para o lado do titulo */
+    border-bottom: 16px solid #341f97;
+    justify-content: center;
+    text-transform: uppercase; /* Texto em maiúsculo */
+    font-style: italic; 
+}
+
+header button {
+    margin-left: 16px;
+}
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;
+    display: none; /* Inicialmente o form não será exibido */
+}
+
+form h2{
+    margin-bottom: 16px;
+}
+
+input,
+button {
+    padding: 8px;
+}
+
+button {
+    background-color: #009432;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+}
+
+#botao-cancelar {
+    background-color: red;
+}
+
+ul { /*Fazendo as imagens darem wrap */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul li{ /*Imagens ficam uma em cima da outra */
+    max-width: 25%;
+    list-style: none; /*remover bolinhas da lista */
+    position: relative; /* faz com que os links se mantenham logo abaixo das imagens ja que eles tem position: absolute */
+    max-height: 280px;
+    overflow-y: hidden; /* corta a imagem que ultrapassa o container de link */
+}
+
+ul li img{ /*Imagens respeitam o espaço umas das outras */
+    width: 100%;
+}
+
+.overlay-imagem-link {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all ease .5s; /* adicionando uma transição*/
+}
+
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none; /* remove linha abaixo dos links */
+}
+
+ul li:hover .overlay-imagem-link { /* quando o mouse estiver em cima dos links eles aparecem */
+    opacity: 1;
+}
